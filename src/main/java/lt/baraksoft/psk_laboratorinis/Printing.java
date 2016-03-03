@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  */
 @Named
 @RequestScoped // @SessionScoped
-@Stateful
+@Stateful       //@Stateless
 public class Printing {
     
     @PersistenceContext
@@ -29,8 +29,8 @@ private EntityManager em;
             University uni = q.get(i);
             String a = uni.getTitle();
             b = b + " " + a;
-       }       
-       return b;      
+       }
+       return b;
     }
     
     @PostConstruct
