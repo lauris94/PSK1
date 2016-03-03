@@ -17,6 +17,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.Size;
 
 /**
@@ -41,6 +42,7 @@ public class University implements Serializable {
     @Size(max = 50)
     @Column(name = "TITLE")
     private String title;
+    @Version
     @Column(name = "OPT_LOCK_VERSION")
     private Integer optLockVersion;
     @OneToMany(mappedBy = "universityId")

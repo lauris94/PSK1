@@ -20,6 +20,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.Size;
 
 /**
@@ -52,6 +53,7 @@ public class Student implements Serializable {
     @Size(max = 20)
     @Column(name = "REGISTRATION_NO")
     private String registrationNo;
+    @Version
     @Column(name = "OPT_LOCK_VERSION")
     private Integer optLockVersion;
     @JoinTable(name = "STUDENT_COURSE", joinColumns = {
