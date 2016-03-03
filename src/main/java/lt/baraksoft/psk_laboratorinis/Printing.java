@@ -28,7 +28,7 @@ private EntityManager em;
        for (int i = 0; i < size; i++){
             University uni = q.get(i);
             String a = uni.getTitle();
-            b += a;
+            b = b + " " + a;
        }       
        return b;      
     }

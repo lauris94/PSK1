@@ -17,6 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.Size;
 
 /**
@@ -41,7 +42,8 @@ public class Course implements Serializable {
     @Size(max = 50)
     @Column(name = "NAME")
     private String name;
-    @Column(name = "OPT_LOCK_VERSION")
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")    
     private Integer optLockVersion;
     @ManyToMany(mappedBy = "courseList")
     private List<Student> studentList;
@@ -88,7 +90,7 @@ public class Course implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (name != null ? name.hashCode() : 0);
         return hash;
     }
 
@@ -99,7 +101,7 @@ public class Course implements Serializable {
             return false;
         }
         Course other = (Course) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.name == null && other.name != null) || (this.name != null && !this.name.equals(other.name))) {
             return false;
         }
         return true;
