@@ -21,7 +21,7 @@ public class Printing {
     @PersistenceContext
 private EntityManager em;
 
-    public String sakykLabas() {
+    public String showUniversityTitles() {
        String b = "";
        List<University> q = em.createQuery("SELECT u FROM University u").getResultList();       
        int size = q.size();
